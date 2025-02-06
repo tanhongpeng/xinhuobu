@@ -1,0 +1,8 @@
+<view class="container">
+  <view class="watermark">粒料皆注籍毫，厘总关薪</view>
+  <form bindsubmit="onSubmit">
+    <input name="amount" placeholder="请输入金额" type="number" />
+    <input name="description" placeholder="请输入备注" />
+    <button formType="submit">添薪</button>
+  </form>
+</view>

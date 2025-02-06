@@ -1,0 +1,27 @@
+.container {
+  padding: 20px;
+}
+
+.watermark {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgba(0, 0, 0, 0.1);
+  font-size: 24px;
+  transform: rotate(-30deg);
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px;
+  background-color: #FF6B35;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}

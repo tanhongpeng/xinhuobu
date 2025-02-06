@@ -1,0 +1,8 @@
+<view class="container">
+  <text class="tip">银薪似墨线，笔笔定方圆</text>
+  <view wx:for="{{withdrawRecords}}" wx:key="index">
+    <view>日期: {{item.date}}</view>
+    <view>金额: {{item.amount}}</view>
+    <view>备注: {{item.description}}</view>
+  </view>
+</view>

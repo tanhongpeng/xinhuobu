@@ -1,0 +1,6 @@
+<view class="splash">
+  <text class="quote">{{quote}}</text>
+  <view class="loading-bar">
+    <view class="progress" style="width: {{loadingPercent}}%;"></view>
+  </view>
+</view>

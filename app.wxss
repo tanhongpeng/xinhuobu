@@ -1,0 +1,6 @@
+/* 全局样式 */
+page {
+  font-family: '方正新体楷增强', sans-serif;
+  background-color: #fff;
+  color: #333;
+}

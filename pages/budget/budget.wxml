@@ -1,0 +1,8 @@
+<view class="container">
+  <text class="guide">岁计在豫，工成在簿</text>
+  <input placeholder="请输入年度预算金额" bindinput="onBudgetInput" />
+  <view>当前已支出: {{expenses}}</view>
+  <view wx:if="{{isOverBudget}}">
+    <text style="color: #C44536;">{{warningQuote}}</text>
+  </view>
+</view>
