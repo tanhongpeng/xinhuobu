@@ -11,19 +11,23 @@ Page({
   },
   onSubmit: function (e) {
     const { amount, description } = e.detail.value;
-    const encryptedAmount = CryptoJS.AES.encrypt(amount, 'your-secret-key').toString();
-    const newRecord = {
-      amount: encryptedAmount,
-      description,
-      date: new Date().toLocaleDateString()
-    };
-    const records = this.data.records;
-    records.push(newRecord);
-    wx.setStorageSync('records', records);
-    const quote = quotes.find(item => item.scene === '记账完成').text;
-    wx.showToast({
-      title: quote,
-      icon: 'none'
-    });
+    try {
+      const encryptedAmount = CryptoJS.AES.encrypt(amount, 'your-secret-key').toString();
+      const newRecord = {
+        amount: encryptedAmount,
+        description,
+        date: new Date().toLocaleDateString()
+      };
+      const records = this.data.records;
+      records.push(newRecord);
+      wx.setStorageSync('records', records);
+      const quote = quotes.find(item => item.scene === '记账完成').text;
+      wx.showToast({
+        title: quote,
+        icon: 'none'
+      });
+    } catch (error) {
+      console.error('加密失败:', error);
+    }
   }
 })

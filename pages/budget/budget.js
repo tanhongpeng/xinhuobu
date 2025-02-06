@@ -17,8 +17,12 @@ Page({
     const records = wx.getStorageSync('records') || [];
     let expenses = 0;
     records.forEach(record => {
-      const decryptedAmount = CryptoJS.AES.decrypt(record.amount, 'your-secret-key').toString(CryptoJS.enc.Utf8);
-      expenses += parseFloat(decryptedAmount);
+      try {
+        const decryptedAmount = CryptoJS.AES.decrypt(record.amount, 'your-secret-key').toString(CryptoJS.enc.Utf8);
+        expenses += parseFloat(decryptedAmount);
+      } catch (error) {
+        console.error('解密失败:', error);
+      }
     });
     this.setData({ expenses });
     this.checkBudget();
