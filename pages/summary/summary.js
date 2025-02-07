@@ -1,4 +1,5 @@
-const echarts = require('../../ec-canvas/echarts');
+// 注意路径根据实际情况调整
+const echarts = require('../../../ec-canvas/ec-canvas/echarts.js');
 
 function initChart(canvas, width, height) {
   const chart = echarts.init(canvas, null, {
