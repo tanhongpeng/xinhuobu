@@ -6,21 +6,22 @@ Page({
     quote: ''
   },
   onLoad: function () {
-    const that = this;
     const quote = quotes.find(item => item.scene === '启动加载').text;
     this.setData({ quote });
-    const loadingInterval = setInterval(() => {
-      let percent = that.data.loadingPercent;
+    let percent = 0;
+    const updateLoading = () => {
       percent += 10;
-      that.setData({
+      this.setData({
         loadingPercent: percent
       });
-      if (percent >= 100) {
-        clearInterval(loadingInterval);
+      if (percent < 100) {
+        setTimeout(updateLoading, 500);
+      } else {
         wx.switchTab({
           url: '/pages/record/record'
         });
       }
-    }, 500);
+    };
+    setTimeout(updateLoading, 500);
   }
 })

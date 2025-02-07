@@ -1,11 +1,5 @@
 {
-	"appid": "wxabba95bf5615403d",
-	"projectname": "薪火簿",
 	"compileType": "miniprogram",
-	"packOptions": {
-		"ignore": [],
-		"include": []
-	},
 	"condition": {},
 	"setting": {
 		"coverView": true,
@@ -31,5 +25,11 @@
 	"editorSetting": {
 		"tabIndent": "tab",
 		"tabSize": 4
-	}
+	},
+	"packOptions": {
+		"ignore": [],
+		"include": []
+	},
+	"appid": "wxabba95bf5615403d",
+	"projectname": "薪火簿"
 }

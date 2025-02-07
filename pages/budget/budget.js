@@ -1,6 +1,12 @@
 const CryptoJS = require('../../utils/crypto.js');
 const quotes = require('../../data/quotes.js');
 
+// 提取验证预算输入的函数
+function validateBudgetInput(value) {
+  const budget = parseInt(value);
+  return!isNaN(budget) && budget >= 0;
+}
+
 Page({
   data: {
     budget: 0,
@@ -9,31 +15,38 @@ Page({
     warningQuote: ''
   },
   onBudgetInput: function (e) {
-    const budget = parseInt(e.detail.value);
-    this.setData({ budget });
-    this.checkBudget();
+    const value = e.detail.value;
+    if (validateBudgetInput(value)) {
+      const budget = parseInt(value);
+      this.setData({ budget });
+      this.checkBudget();
+    } else {
+      wx.showToast({
+        title: '请输入有效的预算值',
+        icon: 'none'
+      });
+    }
   },
   onLoad: function () {
-    const records = wx.getStorageSync('records') || [];
-    let expenses = 0;
-    records.forEach(record => {
-      try {
-        const decryptedAmount = CryptoJS.AES.decrypt(record.amount, 'your-secret-key').toString(CryptoJS.enc.Utf8);
-        expenses += parseFloat(decryptedAmount);
-      } catch (error) {
-        console.error('解密失败:', error);
+    wx.getStorage({
+      key: 'records',
+      success: (res) => {
+        const records = res.data || [];
+        let expenses = 0;
+        records.forEach(record => {
+          try {
+            const decryptedAmount = CryptoJS.AES.decrypt(record.amount, 'your-secret-key').toString(CryptoJS.enc.Utf8);
+            expenses += parseFloat(decryptedAmount);
+          } catch (error) {
+            console.error('解密失败:', error);
+          }
+        });
+        this.setData({ expenses });
+        this.checkBudget();
+      },
+      fail: (error) => {
+        console.error('获取存储数据失败:', error);
       }
-    });
-    this.setData({ expenses });
-    this.checkBudget();
-  },
-  checkBudget: function () {
-    const { budget, expenses } = this.data;
-    const isOverBudget = expenses > budget;
-    const warningQuote = isOverBudget ? quotes.find(item => item.scene === '预算超支').text : '';
-    this.setData({
-      isOverBudget,
-      warningQuote
     });
   }
 })
