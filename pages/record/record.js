@@ -6,7 +6,8 @@ try {
 }
 
 const quotes = require('../../data/quotes.js');
-const CryptoJS = require('../../utils/crypto-js.js');
+// 去除重复引入
+// const CryptoJS = require('../../utils/crypto-js.js');
 
 Page({
   data: {

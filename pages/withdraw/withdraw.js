@@ -1,4 +1,4 @@
-const CryptoJS = require('../../utils/crypto.js');
+const CryptoJS = require('../../utils/crypto-js.js'); // 修改引入路径
 
 Page({
   data: {

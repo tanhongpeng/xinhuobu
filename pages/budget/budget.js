@@ -1,8 +1,11 @@
-const CryptoJS = require('../../utils/crypto.js');
+const CryptoJS = require('../../utils/crypto-js.js');
 const quotes = require('../../data/quotes.js');
 
-// 从配置文件读取密钥
-const SECRET_KEY = 'your-secret-key';
+const app = getApp();
+// 从全局数据中获取密钥
+const SECRET_KEY = app.globalData.SECRET_KEY;
+
+// 后续代码保持不变
 
 Page({
   data: {

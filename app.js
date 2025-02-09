@@ -1,8 +1,5 @@
 App({
-  onLaunch: function () {
-    console.log('小程序启动');
-  },
   globalData: {
-    userInfo: null
+    SECRET_KEY: 'your-secret-key'
   }
 })
