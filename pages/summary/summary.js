@@ -1,7 +1,16 @@
 // 注意路径根据实际情况调整
-const echarts = require('../../../ec-canvas/ec-canvas/echarts.js');
+let echarts;
+try {
+  echarts = require('../../ec-canvas/ec-canvas/echarts.js');
+} catch (error) {
+  console.error('引入 echarts 模块失败:', error);
+}
 
 function initChart(canvas, width, height) {
+  if (!echarts) {
+    console.error('echarts 模块未正确引入，无法初始化图表');
+    return null;
+  }
   try {
     const chart = echarts.init(canvas, null, {
       width: width,

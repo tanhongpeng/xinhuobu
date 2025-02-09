@@ -30,5 +30,7 @@
 		"ignore": [],
 		"include": []
 	},
-	"projectname": "薪火簿"
+	"appid": "wxabba95bf5615403d",
+	"projectname": "xinhuobu",
+	"description": "薪火簿微信小程序宛如数字账本里的点点薪火，温暖记录收支、预算与生活点滴，以简洁界面和实用功能点亮每一次财务管理之旅。"
 }
