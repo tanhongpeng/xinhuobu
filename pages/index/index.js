@@ -6,10 +6,10 @@ Page({
     quote: ''
   },
   onLoad: function () {
-    // 延迟 2 秒后跳转到登录页
+    // 延迟 2 秒后跳转到主页
     setTimeout(() => {
       wx.reLaunch({
-        url: '/pages/login/login',  // 跳转到登录页
+        url: '/pages/home/home',  // 替换成实际的主页路径
         fail: function (err) {
           console.error('跳转失败:', err);
         }
@@ -25,6 +25,10 @@ Page({
       });
       if (percent < 100) {
         setTimeout(updateLoading, 500);
+      } else {
+        wx.switchTab({
+          url: '/pages/record/record'
+        });
       }
     };
     setTimeout(updateLoading, 500);

@@ -5,4 +5,5 @@
     <input name="description" placeholder="请输入备注" />
     <button formType="submit">添薪</button>
   </form>
+  <button bindtap="jumpToWithdraw">跳转到支取记录页</button>
 </view>
