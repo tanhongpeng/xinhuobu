@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="logo">薪火簿登录</view>
+  <input type="text" placeholder="用户名" bindinput="onUsernameInput" />
+  <input type="password" placeholder="密码" bindinput="onPasswordInput" />
+  <button bindtap="onLogin">登录</button>
+</view>
