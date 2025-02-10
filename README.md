@@ -2,8 +2,11 @@
 
 ## 页面配置
 `pages` 数组定义了小程序的页面路径：
-- `pages/index/index`：首页
+- `pages/index/index`：启动页
 - `pages/record/record`：记录页
+- `pages/budget/budget`：预算页
+- `pages/withdraw/withdraw`：支取记录页
+- `pages/summary/summary`：月度汇总页
 
 ## 窗口配置
 `window` 对象配置了小程序窗口的样式：
