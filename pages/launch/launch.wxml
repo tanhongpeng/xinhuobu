@@ -1,0 +1,18 @@
+<!-- pages/launch/launch.wxml -->
+<view class="launch-container">
+  <!-- 动态墨线加载动画 -->
+  <view class="loading-animation">
+    <view class="ink-line" style="transform: rotate({{loadingProgress * 3.6}}deg);"></view>
+    <text class="progress-text">{{loadingProgress}}%</text>
+  </view>
+
+  <!-- 错误提示 -->
+  <view class="error-box" wx:if="{{errorMessage}}">
+    <text class="error-text">{{errorMessage}}</text>
+  </view>
+
+  <!-- 文化语录（需后续扩展） -->
+  <view class="quote-text">
+    <text>夯土万丈起于毫厘之契</text>
+  </view>
+</view>

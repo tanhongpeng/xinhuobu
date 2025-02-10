@@ -1,6 +1,5 @@
-/* 全局样式 */
-page {
-  font-family: '方正新体楷增强', sans-serif;
-  background-color: #fff;
-  color: #333;
+/* app.wxss */
+@font-face {
+  font-family: '方正新体楷增强';
+  src: url('/assets/fonts/fzkt.ttf');
 }

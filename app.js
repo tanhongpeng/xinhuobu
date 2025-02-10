@@ -1,5 +1,8 @@
 App({
   globalData: {
-    SECRET_KEY: 'your-secret-key'
+    isLaunched: false
+  },
+  onLaunch() {
+    // 在launch页成功跳转后设置为true
   }
 })

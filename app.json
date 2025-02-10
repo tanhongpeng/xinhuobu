@@ -1,28 +1,53 @@
 {
   "pages": [
+    "pages/launch/launch",
+    "pages/home/home",
+    "pages/login/login", 
     "pages/index/index",
     "pages/record/record",
     "pages/withdraw/withdraw",
     "pages/summary/summary",
-    "pages/budget/budget",
-    "pages/login/login" ,
-    "pages/home/home"
+    "pages/budget/budget"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FF6B35",
     "navigationBarTitleText": "薪火簿",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "onReachBottomDistance": 0
   },
-  "style": "v2",
-  "sitemapLocation": "sitemap.json",
   "subpackages": [
     {
-      "root": "subpackages",
+      "root": "subpackages/charts",
       "pages": [
-        "subPage1",
-        "subPage2"
+        "ecCanvas/incomeReport",
+        "ecCanvas/expenseAnalysis"
+      ]
+    },
+    {
+      "root": "subpackages/settings",
+      "pages": [
+        "helpCenter",   
+        "privacyPolicy" 
       ]
     }
-  ]
-}
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": ["audio"],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "用于工地位置记录功能"
+    }
+  },
+  
+    "lazyCodeLoading": "requiredComponents", 
+    "requiredBackgroundModes": ["location"],
+    "permission": {
+      "scope.userLocation":  {
+        "desc": "用于记录账单地理位置信息"
+      }
+    }
+  }
+  

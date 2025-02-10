@@ -1,4 +1,5 @@
 Page({
+  
   data: {
     // 可以在这里定义页面所需的数据
   },
@@ -15,7 +16,8 @@ Page({
     });
   },
   onLoad() {
-    // 页面加载时的逻辑
-    console.log('主页加载完成');
+    if (!getApp().globalData.isLaunched) {
+      wx.reLaunch({ url: '/pages/launch/launch' })
+    }
   }
 });
