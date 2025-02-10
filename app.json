@@ -1,6 +1,6 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/index/index", 
     "pages/record/record",
     "pages/withdraw/withdraw",
     "pages/summary/summary",
@@ -13,5 +13,14 @@
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "subpackages": [
+    {
+      "root": "subpackages",
+      "pages": [
+        "subPage1",
+        "subPage2"
+      ]
+    }
+  ]
 }

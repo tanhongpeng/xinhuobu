@@ -6,6 +6,15 @@ Page({
     quote: ''
   },
   onLoad: function () {
+    // 延迟 2 秒后跳转到主页
+    setTimeout(() => {
+      wx.reLaunch({
+        url: '/pages/home/home',  // 替换成实际的主页路径
+        fail: function (err) {
+          console.error('跳转失败:', err);
+        }
+      });
+    }, 2000);
     const quote = quotes.find(item => item.scene === '启动加载').text;
     this.setData({ quote });
     let percent = 0;
