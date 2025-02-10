@@ -1,0 +1,10 @@
+<view class="container">
+  <!-- 页面标题 -->
+  <view class="page-title">欢迎来到薪火簿</view>
+  <!-- 功能按钮区域 -->
+  <view class="button-group">
+    <!-- 导航到记录页的按钮 -->
+    <button bindtap="navigateToRecord">去记录</button>
+    <!-- 其他功能按钮可以继续添加 -->
+  </view>
+</view>
