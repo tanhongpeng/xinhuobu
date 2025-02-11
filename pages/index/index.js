@@ -6,6 +6,14 @@ Page({
     quote: ''
   },
   onLoad: function () {
+    // 加载网络字体
+    wx.loadFontFace({
+      family: 'WenKai',
+      source: 'url("https://fonts.lxgw.io/css2?family=LXGWWenKai")',
+      success: () => console.log('网络字体加载成功'),
+      fail: (err) => console.error('字体加载失败:', err)
+    });
+
     // 延迟 2 秒后跳转到主页
     setTimeout(() => {
       wx.reLaunch({
@@ -15,8 +23,10 @@ Page({
         }
       });
     }, 2000);
+
     const quote = quotes.find(item => item.scene === '启动加载').text;
     this.setData({ quote });
+
     let percent = 0;
     const updateLoading = () => {
       percent += 10;

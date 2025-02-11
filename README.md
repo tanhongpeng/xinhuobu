@@ -18,3 +18,7 @@
 
 ## 其他配置
 `sitemapLocation`：指定小程序的 sitemap 文件路径。
+
+## 字体授权声明
+- 霞鹜文楷：遵循 [SIL Open Font License 1.1](https://scripts.sil.org/OFL)
+- 允许商用及二次分发，禁止单独销售字体文件
