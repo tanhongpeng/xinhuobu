@@ -15,20 +15,19 @@
     "navigationBarTitleText": "薪火簿",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false,
-    "onReachBottomDistance": 0
+    "onReachBottomDistance": 0 
   },
   "subpackages": [
     {
       "root": "subpackages/fonts",
-      "pages": [],
-      "resources": ["assets/fonts/LXGWWenKai-Regular.ttf"]
+      "pages": ["animation"]
     }
   ],
   "style": "v2",
-  "sitemapLocation": "sitemap.json",
+  "sitemapLocation": "sitemap.json", 
   "requiredBackgroundModes": ["audio", "location"],
   "permission": {
-    "scope.userLocation": {
+    "scope.userLocation":  {
       "desc": "用于工地位置记录功能和记录账单地理位置信息"
     }
   },

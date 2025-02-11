@@ -30,33 +30,34 @@ Page({
   // 字体加载方法（新增核心逻辑）
   _loadCustomFont() {
     return new Promise((resolve, reject) => {
-      wx.loadFontFace({
-        family: 'WenKai',
-        source: 'url("https://fonts.lxgw.io/css2?family=LXGWWenKai")', // 网络字体
-        global: true, // 全局生效
-        success: () => {
-          console.log('霞鹜文楷加载成功');
-          this.setData({ fontLoaded: true });
-          resolve();
-        },
-        fail: (err) => {
-          console.warn('网络字体加载失败，尝试本地字体:', err);
-          // 尝试加载本地备用字体
-          wx.loadFontFace({
+        wx.loadFontFace({
             family: 'WenKai',
-            source: 'url("/assets/fonts/LXGWWenKai.ttf")',
+            source: 'url("https://fonts.lxgw.io/css2?family=LXGWWenKai")', // 网络字体
+            global: true, // 全局生效
             success: () => {
-              this.setData({ fontLoaded: true });
-              resolve();
+                console.log('霞鹜文楷加载成功');
+                this.setData({ fontLoaded: true });
+                resolve();
             },
-            fail: (localErr) => {
-              reject(localErr);
+            fail: (err) => {
+                console.warn('网络字体加载失败，尝试本地字体:', err);
+                // 尝试加载本地备用字体
+                wx.loadFontFace({
+                    family: 'WenKai',
+                    source: 'url("/assets/fonts/LXGWWenKai.ttf")',
+                    success: () => {
+                        this.setData({ fontLoaded: true });
+                        resolve();
+                    },
+                    fail: (localErr) => {
+                        console.error('本地字体加载失败，详细错误信息:', localErr); // 添加详细错误信息
+                        reject(localErr);
+                    }
+                });
             }
-          });
-        }
-      });
+        });
     });
-  },
+},
 
   // 初始化文化语录
   _initLaunchContent() {

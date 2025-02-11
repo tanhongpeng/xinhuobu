@@ -1,9 +1,7 @@
 /* app.wxss */
 @font-face {
-  font-family: 'WenKai';
-  src: url('/assets/fonts/LXGWWenKai-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'LXGWWenKai';
+  src: url('/assets/fonts/LXGWWenKai-Regular.ttf'); 
 }
 
 /* 全局应用（按需调整） */
