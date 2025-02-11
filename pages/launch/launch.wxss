@@ -1,4 +1,18 @@
-/* pages/launch/launch.wxss */
+/* 新增字体相关样式 */
+.quote-text {
+  font-family: 'WenKai', sans-serif; /* 优先使用霞鹜文楷 */
+  font-size: 32rpx;
+  color: #3E2723; /* 砚台黑 */
+  text-align: center;
+  margin-top: 40rpx;
+}
+
+/* 错误提示样式优化 */
+.error-message {
+  font-family: system-ui, sans-serif; /* 系统默认字体保底 */
+  color: #C44536; /* 薪火红 */
+}
+
 .launch-container {
   height: 100vh;
   background: #FF6B35; /* 工程橙主色调 */
@@ -36,7 +50,7 @@
   transform: translate(-50%, -50%);
   color: #FFFFFF;
   font-size: 36rpx;
-  font-family: '方正新体楷增强';
+  font-family: 'WenKai', sans-serif;
 }
 
 .error-box {
@@ -56,5 +70,5 @@
   bottom: 100rpx;
   color: rgba(255,255,255,0.5);
   font-size: 24rpx;
-  font-family: '方正新体楷增强';
+  font-family: 'WenKai', sans-serif;
 }
