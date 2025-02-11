@@ -12,7 +12,7 @@
   </view>
 
   <!-- 文化语录（需后续扩展） -->
-  <view class="quote-text">
-    <text>夯土万丈起于毫厘之契</text>
-  </view>
+<view class="quote">
+  <text class="chinese-text">薪火相传，匠心永铸</text>
+</view>
 </view>

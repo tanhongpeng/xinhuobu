@@ -1,5 +1,12 @@
 /* app.wxss */
 @font-face {
-  font-family: '方正新体楷增强';
-  src: url('/assets/fonts/fzkt.ttf');
+  font-family: 'WenKai';
+  src: url('/assets/fonts/LXGWWenKai-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 全局应用（按需调整） */
+page {
+  font-family: 'WenKai', sans-serif;
 }
