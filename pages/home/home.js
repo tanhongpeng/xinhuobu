@@ -1,23 +1,30 @@
-Page({ 
-  data: { 
-    // 可以在这里定义页面所需的数据 
-  }, 
-  // 导航到记录页的方法 
-  navigateToRecord() { 
-    wx.navigateTo({  
-      url: '/pages/record/record', 
-      success: function(res) { 
-        // 页面跳转成功的回调函数 
-        console.log(' 导航成功'); 
-      }, 
-      fail: function(res) { 
-        // 页面跳转失败的回调函数 
-        console.log(' 导航失败', res); 
-      }, 
-      complete: function(res) { 
-        // 页面跳转结束的回调函数（调用成功、失败都会执行） 
-        console.log(' 导航结束', res); 
-      } 
-    }); 
-  } 
-}); 
+const authPages = {
+  'withdraw': true,
+  'budget': true
+};
+
+Page({
+  navigateTo(page) {
+    if (authPages[page] && !getApp().globalData.isAuthed) {
+      wx.showModal({
+        title: '需要登录',
+        content: '该功能需要先进行身份验证',
+        success: (res) => {
+          if (res.confirm) {
+            wx.navigateTo({ url: '/pages/login/login' });
+          }
+        }
+      });
+      return;
+    }
+    
+    const map = {
+      'record': '/pages/record/record',
+      'withdraw': '/pages/withdraw/withdraw',
+      'budget': '/pages/budget/budget',
+      'summary': '/pages/summary/summary'
+    };
+    
+    wx.navigateTo({ url: map[page] });
+  }
+});

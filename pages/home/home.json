@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "薪火簿主页"
+  "navigationBarTitleText": "薪火簿主页",
+  "usingComponents": {
+    "custom-tab-bar": "/components/custom-tab-bar/index"
+  }
 }

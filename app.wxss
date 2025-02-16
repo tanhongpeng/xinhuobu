@@ -1,10 +1,76 @@
-/* app.wxss */
 @font-face {
   font-family: 'LXGWWenKai';
-  src: url('/assets/fonts/LXGWWenKai-Regular.ttf'); 
+  src: url('/assets/fonts/LXGWWenKai-Regular.ttf') format('truetype');
 }
 
-/* 全局应用（按需调整） */
-page {
-  font-family: 'WenKai', sans-serif;
+/*备用字体方案*/
+body {
+  font-family: 'LXGWWenKai', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+/* 修改后的tabBar样式 */
+.tab-bar-item {
+  --icon-size: 40rpx;
+  --text-size: 24rpx;
+  --active-color: #FF6B35;
+  --default-color: #666;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tab-bar-item .iconfont {
+  font-size: var(--icon-size);
+  color: var(--default-color);
+}
+
+.tab-bar-item.active .iconfont {
+  color: var(--active-color) !important;
+}
+
+.tab-bar-item text {
+  font-size: var(--text-size);
+  margin-top: 8rpx;
+}
+
+/* 动态颜色控制 */
+.grid-item .iconfont {
+  font-size: 64rpx;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.grid-item:active .iconfont {
+  color: var(--secondary-color);
+}
+
+/* 水印图标特殊样式 */
+.watermark {
+  font-family: 'iconfont';
+  font-size: 200rpx;
+  opacity: 0.1;
+  position: absolute;
+  z-index: 0;
+}
+
+/* 标准图标尺寸 */
+.icon-sm { font-size: 32rpx; }  /* 小尺寸 */
+.icon-md { font-size: 48rpx; }  /* 中等尺寸 */
+.icon-lg { font-size: 64rpx; }  /* 大尺寸 */
+
+/* 解决方案 */
+.iconfont {
+  color: inherit !important; /* 强制继承父级颜色 */
+}
+
+/* 状态控制 */
+.active .iconfont {
+  color: #FF6B35 !important;
+}
+
+/* 添加抗锯齿优化 */
+.iconfont {
+  -webkit-font-smoothing: antialiased;
+  transform: translateZ(0); /* 触发GPU加速 */
 }

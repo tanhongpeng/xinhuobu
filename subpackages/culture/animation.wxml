@@ -1,2 +1,7 @@
-<!--subpackages/culture/animation.wxml-->
-<text>subpackages/culture/animation.wxml</text>
+<view class="ink-container">
+  <view class="ink-flow" animation="{{inkAnimation}}"></view>
+  <view class="quote-box">
+    <text class="quote-text">{{currentQuote}}</text>
+    <text class="quote-source">—— {{quoteSource}}</text>
+  </view>
+</view>

@@ -1,10 +1,67 @@
 <view class="container">
-  <!-- 页面标题 -->
-  <view class="page-title">欢迎来到薪火簿</view>
-  <!-- 功能按钮区域 -->
-  <view class="button-group">
-    <!-- 导航到记录页的按钮 -->
-    <button bindtap="navigateToRecord">去记录</button>
-    <!-- 其他功能按钮可以继续添加 -->
+  <!-- 文化标识 -->
+  <view class="culture-mark">匠</view>
+
+  <!-- 功能导航 -->
+  <view class="craft-grid">
+    <!-- 添加工账 -->
+    <view 
+      class="grid-item" 
+      bindtap="navigateTo"
+      data-path="record"
+      hover-class="grid-item-active"
+    >
+      <!-- 镶嵌效果 -->
+      <text 
+        class="craft-icon lg" 
+        data-color="primary"
+        data-inlay="true"
+      ></text>
+      <text class="grid-title">添加工账</text>
+      <view class="craft-border"></view>
+    </view>
+
+    <!-- 工钱支取 -->
+    <view 
+      class="grid-item" 
+      bindtap="navigateTo"
+      data-path="withdraw"
+      hover-class="grid-item-active"
+    >
+      <text 
+        class="craft-icon lg" 
+        data-color="primary"
+        data-inlay="true"
+      ></text>
+      <text class="grid-title">工钱支取</text>
+      <view class="craft-border"></view>
+    </view>
+
+    <!-- 预算管理 -->
+    <view 
+      class="grid-item" 
+      bindtap="navigateTo"
+      data-path="budget"
+      hover-class="grid-item-active"
+    >
+      <text 
+        class="craft-icon lg" 
+        data-color="primary"
+        data-inlay="true"
+      ></text>
+      <text class="grid-title">预算管理</text>
+      <view class="craft-border"></view>
+    </view>
+  </view>
+
+  <!-- 快速入口 -->
+  <view class="quick-access">
+    <button 
+      class="btn-primary" 
+      bindtap="navigateTo"
+      data-path="summary"
+    >
+      查看统计
+    </button>
   </view>
 </view>

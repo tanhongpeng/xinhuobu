@@ -1,0 +1,22 @@
+<!-- craft-tab-bar.wxml -->
+<view class="craft-tab-bar">
+  <block wx:for="{{list}}" wx:key="index">
+    <view 
+      class="tab-item {{activeIndex === index ? 'active' : ''}}"
+      data-index="{{index}}"
+      data-path="{{item.pagePath}}"
+      bindtap="handleTabChange"
+    >
+      <!-- 动态图标 -->
+      <text 
+        class="craft-icon md"
+        data-color="{{activeIndex === index ? 'secondary' : 'dark'}}"
+        data-cyber="{{activeIndex === index ? 'active' : ''}}"
+      >{{activeIndex === index ? item.activeIcon : item.icon}}</text>
+      
+      <!-- 工匠风格装饰线 -->
+      <view class="tab-line {{activeIndex === index ? 'animate' : ''}}"></view>
+      <text class="tab-text">{{item.text}}</text>
+    </view>
+  </block>
+</view>

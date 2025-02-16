@@ -1,0 +1,58 @@
+/* craft-tab-bar.wxss */
+.craft-tab-bar {
+  height: 100rpx;
+  background: #FFF5F2;
+  box-shadow: 0 -4rpx 12rpx rgba(62,39,35,0.06);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+}
+
+.tab-item {
+  position: relative;
+  padding: 16rpx 24rpx;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-item::after {
+  animation: icon-pulse 1.2s infinite;
+}
+
+.tab-item.active .craft-icon {
+  transform: translateY(-8rpx);
+  color: var(--secondary-color);
+}
+
+.tab-item.active .tab-text {
+  opacity: 1;
+  font-weight: 500;
+}
+
+.tab-line {
+  position: absolute;
+  bottom: 16rpx;
+  left: 50%;
+  width: 0;
+  height: 4rpx;
+  background: var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.tab-line.animate {
+  width: 60rpx;
+  left: calc(50% - 30rpx);
+}
+
+.tab-text {
+  font-family: 'LXGWWenKai';
+  font-size: 24rpx;
+  color: var(--text-dark);
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+@keyframes icon-pulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.3); opacity: 0; }
+}

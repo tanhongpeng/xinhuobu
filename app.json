@@ -3,7 +3,6 @@
     "pages/launch/launch",
     "pages/home/home",
     "pages/login/login",
-    "pages/index/index",
     "pages/record/record",
     "pages/withdraw/withdraw",
     "pages/summary/summary",
@@ -15,7 +14,28 @@
     "navigationBarTitleText": "薪火簿",
     "navigationBarTextStyle": "white",
     "enablePullDownRefresh": false,
-    "onReachBottomDistance": 0 
+    "onReachBottomDistance": 0
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#666",
+    "selectedColor": "#FF6B35",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "记账"
+      },
+      {
+        "pagePath": "pages/summary/summary",
+        "text": "统计"
+      }
+    ]
   },
   "subpackages": [
     {
@@ -24,10 +44,10 @@
     }
   ],
   "style": "v2",
-  "sitemapLocation": "sitemap.json", 
+  "sitemapLocation": "sitemap.json",
   "requiredBackgroundModes": ["audio", "location"],
   "permission": {
-    "scope.userLocation":  {
+    "scope.userLocation": {
       "desc": "用于工地位置记录功能和记录账单地理位置信息"
     }
   },

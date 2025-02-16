@@ -1,9 +1,39 @@
 <view class="container">
+  <!-- 文化水印 -->
   <view class="watermark">粒料皆注籍毫，厘总关薪</view>
+  
   <form bindsubmit="onSubmit">
-    <input name="amount" placeholder="请输入金额" type="number" />
-    <input name="description" placeholder="请输入备注" />
-    <button formType="submit">添薪</button>
+    <view class="form-item">
+      <text class="form-label">工资金额</text>
+      <view class="input-group">
+        <text class="currency-symbol">￥</text>
+        <input 
+          name="amount" 
+          type="number" 
+          placeholder="0.00"
+          class="input-field"
+          bindinput="validateAmount"
+        />
+      </view>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">项目说明</text>
+      <input 
+        name="description" 
+        placeholder="请输入工地项目名称"
+        class="input-field"
+        maxlength="20"
+        bindinput="validateDescription"
+      />
+    </view>
+
+    <button 
+      class="btn-primary" 
+      formType="submit"
+      disabled="{{!formValid}}"
+    >
+      添薪入册
+    </button>
   </form>
-  <button bindtap="jumpToWithdraw">跳转到支取记录页</button>
 </view>
